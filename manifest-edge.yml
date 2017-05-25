@@ -1,0 +1,22 @@
+image: smeat/alpine:edge
+manifests:
+  -
+    image: smeat/alpine:x86-edge
+    platform:
+      architecture: 386
+      os: linux
+  -
+    image: smeat/alpine:x86_64-edge
+    platform:
+      architecture: amd64
+      os: linux
+  -
+    image: smeat/alpine:armhf-edge
+    platform:
+      architecture: arm
+      os: linux
+  -
+    image: smeat/alpine:aarch64-edge
+    platform:
+      architecture: arm64
+      os: linux

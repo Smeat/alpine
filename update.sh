@@ -18,6 +18,11 @@ while getopts "a:v:q:u:d:" opt; do
     esac
 done
 
+#Workaround to push manifests
+if [ "$ARCH" = "all" ]; then
+	exit 0
+fi
+
 shift $((OPTIND-1))
 
 [ "$1" = "--" ] && shift

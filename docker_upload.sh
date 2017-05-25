@@ -14,5 +14,8 @@ chmod 755 ./manifest-tool-linux-amd64
 
 docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" && docker push $DOCKER_REPO
 
+set -x
 
-./manifest-tool-linux-amd64 --username="$DOCKER_USERNAME" --password="$DOCKER_PASSWORD"  push from-args --platforms linux/$DOCKER_ARCH --template $DOCKER_REPO:$ARCH-$VERSION --target $DOCKER_REPO:$VERSION
+./manifest-tool-linux-amd64 push from-args --platforms linux/$DOCKER_ARCH --template $DOCKER_REPO:$ARCH-$VERSION --target $DOCKER_REPO:$VERSION
+
+set +x

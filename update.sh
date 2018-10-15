@@ -3,7 +3,7 @@
 # A POSIX variable
 OPTIND=1 # Reset in case getopts has been used previously in the shell.
 
-while getopts "a:v:q:u:d:" opt; do
+while getopts "a:v:q:u:d:t:l:" opt; do
     case "$opt" in
     a)  ARCH=$OPTARG
         ;;
@@ -14,6 +14,10 @@ while getopts "a:v:q:u:d:" opt; do
     u)  QEMU_VER=$OPTARG
         ;;
     d)  DOCKER_REPO=$OPTARG
+        ;;
+    t)  TAG_ARCH=$OPTARG
+        ;;
+    l)  LATEST_VERSION=$OPTARG
         ;;
     esac
 done
@@ -86,5 +90,8 @@ EOF
 fi
 
 # build
-docker build -t "${DOCKER_REPO}:${ARCH}-${VERSION}" .
-docker run --rm "${DOCKER_REPO}:${ARCH}-${VERSION}" /bin/sh -ec "echo Hello from Alpine !; set -x; uname -a; cat /etc/alpine-release"
+docker build -t "${DOCKER_REPO}:${TAG_ARCH}-${VERSION}" .
+if [ "$VERSION" == "$LATEST_VERSION" ]; then
+    docker tag ${DOCKER_REPO}:${TAG_ARCH}-${VERSION} ${DOCKER_REPO}:${TAG_ARCH}-${LATEST_VERSION}
+fi
+docker run --rm "${DOCKER_REPO}:${TAG_ARCH}-${VERSION}" /bin/sh -ec "echo Hello from Alpine !; set -x; uname -a; cat /etc/alpine-release"

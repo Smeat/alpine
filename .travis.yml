@@ -3,7 +3,7 @@ services: docker
 language: bash
 env:
     global:
-        - QEMU_VER=v2.8.4
+        - QEMU_VER=v2.12.0-1
         - DOCKER_REPO=smeat/alpine
     matrix:
         - ARCH=x86      VERSION=v3.4    QEMU_ARCH=i386
@@ -15,10 +15,26 @@ env:
         - ARCH=armhf    VERSION=v3.5    QEMU_ARCH=arm
         - ARCH=aarch64  VERSION=v3.5    QEMU_ARCH=aarch64
 
-#        - ARCH=x86      VERSION=latest-stable    QEMU_ARCH=i386
-#        - ARCH=x86_64   VERSION=latest-stable    QEMU_ARCH=x86_64
-#        - ARCH=armhf    VERSION=latest-stable    QEMU_ARCH=arm
-#        - ARCH=aarch64  VERSION=latest-stable    QEMU_ARCH=aarch64
+        - ARCH=x86      VERSION=v3.6    QEMU_ARCH=i386
+        - ARCH=x86_64   VERSION=v3.6    QEMU_ARCH=x86_64
+        - ARCH=armhf    VERSION=v3.6    QEMU_ARCH=arm
+        - ARCH=aarch64  VERSION=v3.6    QEMU_ARCH=aarch64
+
+        - ARCH=x86      VERSION=v3.7    QEMU_ARCH=i386
+        - ARCH=x86_64   VERSION=v3.7    QEMU_ARCH=x86_64
+        - ARCH=armhf    VERSION=v3.7    QEMU_ARCH=arm
+        - ARCH=aarch64  VERSION=v3.7    QEMU_ARCH=aarch64
+
+
+        - ARCH=x86      VERSION=v3.8    QEMU_ARCH=i386
+        - ARCH=x86_64   VERSION=v3.8    QEMU_ARCH=x86_64
+        - ARCH=armhf    VERSION=v3.8    QEMU_ARCH=arm
+        - ARCH=aarch64  VERSION=v3.8    QEMU_ARCH=aarch64
+
+        - ARCH=x86      VERSION=latest-stable    QEMU_ARCH=i386
+        - ARCH=x86_64   VERSION=latest-stable    QEMU_ARCH=x86_64
+        - ARCH=armhf    VERSION=latest-stable    QEMU_ARCH=arm
+        - ARCH=aarch64  VERSION=latest-stable    QEMU_ARCH=aarch64
 
         - ARCH=x86      VERSION=edge    QEMU_ARCH=i386
         - ARCH=x86_64   VERSION=edge    QEMU_ARCH=x86_64

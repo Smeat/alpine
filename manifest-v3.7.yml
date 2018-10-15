@@ -1,0 +1,22 @@
+image: smeat/alpine:v3.7
+manifests:
+  -
+    image: smeat/alpine:x86-v3.7
+    platform:
+      architecture: 386
+      os: linux
+  -
+    image: smeat/alpine:x86_64-v3.7
+    platform:
+      architecture: amd64
+      os: linux
+  -
+    image: smeat/alpine:armhf-v3.7
+    platform:
+      architecture: arm
+      os: linux
+  -
+    image: smeat/alpine:aarch64-v3.7
+    platform:
+      architecture: arm64
+      os: linux

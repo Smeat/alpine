@@ -13,6 +13,7 @@ docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
 ./manifest-tool-linux-amd64 push from-spec ./manifest-v3.7.yml
 ./manifest-tool-linux-amd64 push from-spec ./manifest-v3.8.yml
 ./manifest-tool-linux-amd64 push from-spec ./manifest-v3.9.yml
+./manifest-tool-linux-amd64 push from-spec ./manifest-v3.10.yml
 ./manifest-tool-linux-amd64 push from-spec ./manifest-latest-stable.yml
 ./manifest-tool-linux-amd64 push from-spec ./manifest-edge.yml
 

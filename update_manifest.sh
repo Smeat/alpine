@@ -8,8 +8,6 @@ chmod 755 ./manifest-tool-linux-amd64
 
 docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
 
-./manifest-tool-linux-amd64 push from-spec ./manifest-v3.5.yml
-./manifest-tool-linux-amd64 push from-spec ./manifest-v3.6.yml
 ./manifest-tool-linux-amd64 push from-spec ./manifest-v3.7.yml
 ./manifest-tool-linux-amd64 push from-spec ./manifest-v3.8.yml
 ./manifest-tool-linux-amd64 push from-spec ./manifest-v3.9.yml
